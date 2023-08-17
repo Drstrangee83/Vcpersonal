@@ -10,33 +10,22 @@ async def main():
     if client:
         try:
             await client.start()
-            await client.join_chat("TheAltron")
-            await client.join_chat("Altron_X")
-            await client.join_chat("Yaaro_Ki_Yaarii")
-            await client.join_chat("AboutShailendra")
-            await client.join_chat("HeroOfficialBots")
+            await client.join_chat("ChitChat_11")
         except Exception as e:
             print(str(e))
 
     if client2:
         try:
             await client2.start()
-            await client2.join_chat("TheAltron")
-            await client2.join_chat("Altron_X")
-            await client2.join_chat("Yaaro_Ki_Yaarii")
-            await client2.join_chat("AboutShailendra")
-            await client2.join_chat("HeroOfficialBots")
+            await client2.join_chat("ChitChat_11")
+            await client2.join
         except Exception as e:
             print(str(e))
 
     if client3:
         try:
             await client3.start()
-            await client3.join_chat("TheAltron")
-            await client3.join_chat("Altron_X")
-            await client3.join_chat("Yaaro_Ki_Yaarii")
-            await client3.join_chat("AboutShailendra")
-            await client3.join_chat("HeroOfficialBots")
+            await client3.join_chat("ChitChat_11")
         except Exception as e:
             print(str(e))
 
