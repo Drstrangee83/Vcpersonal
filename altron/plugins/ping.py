@@ -5,11 +5,11 @@ from config import *
 
 # ping checker
 
-@Client.on_message(filters.command(["ping","p"], ["/", ".", "!"]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["ping","e"], ["/", ".", "!"]) & filters.user(SUDO_USERS))
 async def ping(Client, message):
     start = datetime.now()
     loda = await message.reply_text("» __EXception__")
     end = datetime.now()
     mp = (end - start).microseconds / 1000
-    await loda.edit_text(f"__🤖 ᴘɪɴɢ__\n» `{mp} ms`")
+    await loda.edit_text(f"__🤖 EXception__\n» `{mp} ms`")
 
