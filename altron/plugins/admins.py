@@ -16,17 +16,17 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("**❌ 𝑻𝒉𝒆𝒓𝒆'𝒔 𝒏𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒏 𝒕𝒉𝒆 𝒒𝒖𝒆𝒖𝒆 𝒕𝒐 𝒔𝒌𝒊𝒑**")
+            await m.reply("**CHUD GYA?**")
         elif op == 1:
-            await m.reply("**𝑬𝒎𝒑𝒕𝒚 𝒒𝒖𝒆𝒖𝒆 𝒍𝒆𝒂𝒗𝒊𝒏𝒈 𝒗𝒐𝒊𝒄𝒆 𝒄𝒉𝒂𝒕**")
+            await m.reply("**DAFAN HO GYA GUYS**")
         else:
             await m.reply(
-                f"**⏩ 𝑺𝒌𝒊𝒑𝒑𝒆𝒅 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌** \n**🎶 𝑵𝒐𝒘 𝒑𝒍𝒂𝒚𝒊𝒏𝒈** - [{op[0]}]({op[1]}) | `{op[2]}`",
+                f"**⏩ BAHINCHOD RANDI** \n**🎶 KALAPNA START** - [{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
     else:
         skip = m.text.split(None, 1)[1]
-        OP = "**🗑️ 𝑹𝒆𝒎𝒐𝒗𝒆𝒅 𝒕𝒉𝒆 𝒇𝒐𝒍𝒍𝒐𝒘𝒊𝒏𝒈 𝒔𝒐𝒏𝒈𝒔 𝒇𝒓𝒐𝒎 𝒕𝒉𝒆 𝑸𝒖𝒆𝒖𝒆: -**"
+        OP = "**🗑️ DAFAA HO JAAA BAHINCHOD: -**"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
@@ -52,11 +52,11 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("**✅ 𝑬𝒏𝒅𝒆𝒅 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌**")
+            await m.reply("**DAFAN DONE**")
         except Exception as e:
-            await m.reply(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
+            await m.reply(f"**KYAA HUA....** \n`{e}`")
     else:
-        await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
+        await m.reply("**UFFF BAACHE HAI**")
 
 
 @Client.on_message(commandpro(["!pause", ".pause", "/pause", "pause"]))
@@ -69,12 +69,12 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                f"**⏸ 𝑷𝒍𝒂𝒚𝒃𝒂𝒄𝒌 𝒑𝒂𝒖𝒔𝒆𝒅**\n\n𝑻𝒐 𝒓𝒆𝒔𝒖𝒎𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!resume`"
+                f"**KALAP GYA NA??**\n\n𝑻𝒐 𝒓𝒆𝒔𝒖𝒎𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!resume`"
             )
         except Exception as e:
-            await m.reply(f"**𝑬𝒓𝒓𝒐𝒓.....** \n`{e}`")
+            await m.reply(f"**GAND DE DE GF KA.....** \n`{e}`")
     else:
-        await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
+        await m.reply("**❌ DAFAN**")
 
 
 @Client.on_message(commandpro(["!resume", ".resume", "/resume", "resume"]))
@@ -87,9 +87,9 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                f"**▶️ 𝑷𝒍𝒂𝒚𝒃𝒂𝒄𝒌 𝒓𝒆𝒔𝒖𝒎𝒆𝒅**\n\n𝑻𝒐 𝒑𝒂𝒖𝒔𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!pause`"
+                f"**▶ EXCEPTION OP**\n\n𝑻𝒐 𝒑𝒂𝒖𝒔𝒆 𝒑𝒍𝒂𝒚𝒃𝒂𝒄𝒌, 𝒖𝒔𝒆 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 » `!pause`"
             )
         except Exception as e:
             await m.reply(f"**𝑬𝒓𝒓𝒐𝒓....** \n`{e}`")
     else:
-        await m.reply("**❌ 𝑵𝒐𝒕𝒉𝒊𝒏𝒈 𝒊𝒔 𝒑𝒍𝒂𝒚𝒊𝒏𝒈**")
+        await m.reply("**WAHI HU VAI**")
