@@ -5,7 +5,7 @@ from config import *
 
 # ping checker
 
-@Client.on_message(filters.command(["ping"], ["/", ".", "!"]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["ping","p"], ["/", ".", "!"]) & filters.user(SUDO_USERS))
 async def ping(Client, message):
     start = datetime.now()
     loda = await message.reply_text("» __EXception__")
